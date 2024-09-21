@@ -15,3 +15,18 @@ window.addEventListener("scroll",()=>{
     man.style.left = value * .6 + "px";
 
 })
+
+window.addEventListener("scroll", () => {
+    const aboutSection = document.getElementById("about");  // Get the 'about' section
+    const navBar = document.querySelector("header"); // Get the navigation bar
+
+    // Get the position of the "About" section
+    const aboutSectionPosition = aboutSection.getBoundingClientRect().top;
+    
+    // Change the color when scrolling to the "About" section
+    if (aboutSectionPosition <= window.innerHeight && aboutSectionPosition >= 0) {
+        navBar.style.backgroundColor = "#ff5722"; // Change to your desired color when in "About" section
+    } else {
+        navBar.style.backgroundColor = ""; // Reset to the original color when not in the "About" section
+    }
+});
