@@ -17,16 +17,21 @@ window.addEventListener("scroll",()=>{
 })
 
 window.addEventListener("scroll", () => {
-    const aboutSection = document.getElementById("about");  // Get the 'about' section
-    const navBar = document.querySelector("header"); // Get the navigation bar
-
-    // Get the position of the "About" section
-    const aboutSectionPosition = aboutSection.getBoundingClientRect().top;
+    const sections = document.querySelectorAll("section");  // Get all sections
+    const navLinks = document.querySelectorAll(".navlist a");  // Get all nav links
     
-    // Change the color when scrolling to the "About" section
-    if (aboutSectionPosition <= window.innerHeight && aboutSectionPosition >= 0) {
-        navBar.style.backgroundColor = "#ff5722"; // Change to your desired color when in "About" section
-    } else {
-        navBar.style.backgroundColor = ""; // Reset to the original color when not in the "About" section
-    }
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const scrollPos = window.scrollY + 50;  // Add 50px to make the color change a bit earlier
+        
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").substring(1) === section.id) {
+                    link.classList.add("active");  // Add 'active' class to the link matching the section
+                }
+            });
+        }
+    });
 });

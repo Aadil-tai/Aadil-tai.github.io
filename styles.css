@@ -257,3 +257,13 @@ section{
         align-items: center;
     }
 }
+.navlist a {
+    color: #fff;  /* Default color */
+    text-decoration: none;
+    transition: color 0.3s ease;  /* Smooth transition */
+}
+
+.navlist a.active {
+    color: #ff5722;  /* Active color */
+    font-weight: bold;  /* Optional to make the active link stand out */
+}
