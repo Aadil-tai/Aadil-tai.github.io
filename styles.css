@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+.main-container{
+    min-width: 100%;
+
+}
+html, body {
+   
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    color: #fff;
+    overflow-x: hidden;
+    background-color: #1d002c;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar{
+    height: 0.3 rem;
+    width: 0.5rem;
+
+}
+::-webkit-scrollbar-track{
+    background-color: #1d002c;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #12f7ff;
+    border-radius: 1rem;
+}
+
+header{
+    padding: 25px 10%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1006; /* High z-index to stay on top */
+    
+}
+.logo {
+    font-size: 2rem;
+    color: #12f7ff;
+    font-weight:800;
+    text-decoration: none;
+}
+ul.navlist{
+    display: flex;
+    align-items: center;
+} 
+.navlist li a{
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px groove #12f7ff;
+    border-radius: 25px;
+    padding: 5px 12px;
+    transition: all 0.7s ease;
+    cursor: -webkit-zoom-out;
+    color: #efeaf2;
+}
+.navlist li a:hover,
+.navlist li a.active
+    {
+   box-shadow: 0 0 1rem #12f7ff;
+   color: #1d002c;
+   cursor: zoom-out;
+   background-color:  #12f7ff;
+
+   
+}
+.navlist li a:visited {
+    color: #efeaf2; /* color after the link has been visited */
+}
+
+section{
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+.parallax-home,.about {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    object-fit: cover;
+    
+    height: 100vh;
+
+    
+
+}
+
+.parallax-home img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+
+}
+
+.parallax-home #text{
+    position: absolute;
+    font-size: 2.5rem;
+    text-shadow: 0 10px 4px rgba(0, 0, 5, 123);
+}
+
+.parallax-home img#moon,
+.about img#d_moon {
+    mix-blend-mode: screen;
+}.about{
+    position: relative;
+    object-fit: cover;
+
+}
+.about img{
+    position: absolute;
+    z-index: 1000;
+    object-fit: cover;
+    pointer-events: none;
+
+}
+.about img.about-waterfall{
+    position: absolute;
+    top:4px;
+}
+.about .info-box{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    bottom: 20%;
+    width: 50%;
+    z-index: 1002;
+    background-color: #1d002c;
+
+}
+.about .info-box h2{
+    font-size: 2.5rem;
+}
+.about .info-box p{
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+.btn{
+    background-color: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    transition: all 0.5s ease;
+    border: 3px solid #12f7ff;
+    left: 1%;
+    font-weight: 500;
+}
+
+.btn:hover{
+    box-shadow: 0 0 1rem #12f7ff;
+    background: #1d002c;
+    color: #12f7ff;
+}
+
+.products{
+    background:#121137;
+    padding: 3rem 10%;
+}
+
+.products h2{
+    font-size: 2rem;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.product-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.product-card2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 2rem; /* Space between items */
+}
+
+.card img {
+    width: 200px;
+    height: 200px; 
+    margin-top: -3rem;
+    padding: 4px;
+    line-height: 100px;
+    filter: drop-shadow(10px 3px 5px #12f7ff); /* Adjust blur radius as needed */
+}
+.card{
+    padding: 1rem;
+    border: 2px groove #12f7ff;
+    text-align: center;
+    border-radius: 25px;
+    display: block;
+    transition: all 0.4s ease;
+    z-index: 1001;
+}
+.card .info .price-name{
+    line-height:30px;
+    
+  
+}
+.card .info  p{
+    margin-bottom: 2.5rem;
+}
+
+.card:hover{
+    cursor:pointer;
+    transform: translatey(-7px);
+}
+
+.info .btn{
+    display: block;
+    width: 60%;
+    margin:auto;
+}
+
+.info p{
+    padding: .5rem 0 0.5rem 0;
+}
+
+.card .price-name{
+    display: flex;
+    align-items: center;
+    justify-content : space-between;
+}
+.price-name span{
+    color: #04cf37;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+#moon, #train, #text {
+    position: absolute;
+}
+
+#d-moon{
+    position: absolute;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .product-card {
+        flex-direction: column;
+        align-items: center;
+    }
+}
