@@ -33,5 +33,11 @@ window.addEventListener("scroll", () => {
                 }
             });
         }
+                
+                if (window.scrollY == 0) {
+                    navLinks.forEach(link => link.classList.remove("active"));
+                    document.querySelector(".navlist a[href='#home']").classList.add("active");
+                }
+        
     });
 });
